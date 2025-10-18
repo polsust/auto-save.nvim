@@ -73,10 +73,10 @@ function M.save(buf)
     end
 
     if cnf.opts.write_all_buffers then
-        cmd("silent! wall")
+        cmd("noautocmd wall")
     else
         api.nvim_buf_call(buf, function()
-            cmd("silent! write")
+            cmd("noautocmd write")
         end)
     end
 
