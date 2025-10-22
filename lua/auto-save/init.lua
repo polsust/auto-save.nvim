@@ -122,7 +122,7 @@ end
 function M.on()
 	api.nvim_create_autocmd(cnf.opts.trigger_events, {
 		callback = function()
-			if vim.bo[0].buftype == "" then
+			if vim.fn.expand("%:t") == "" then
 				return
 			end
 
